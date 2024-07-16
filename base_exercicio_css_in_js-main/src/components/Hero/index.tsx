@@ -1,35 +1,36 @@
+// src/components/Hero.tsx
+import React from 'react';
 import styled from 'styled-components';
 
+const HeroSection = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  background: url('path/to/your/image.jpg') no-repeat center center/cover;
+  color: white;
+`;
+
+const HeroContent = styled.div`
+  text-align: center;
+`;
+
+const HeroTitle = styled.h1`
+  font-size: 2.5em;
+  margin-bottom: 20px;
+`;
+
+const HeroSubtitle = styled.p`
+  font-size: 1.2em;
+`;
+
 const Hero = () => (
-  <Form>
-    <Container>
-      <HeroTitle>
-        As melhores vagas para tecnologia, design e artes visuais.
-      </HeroTitle>
-    </Container>
-  </Form>
+  <HeroSection>
+    <HeroContent>
+      <HeroTitle>Bem-vindo ao EBAC Jobs</HeroTitle>
+      <HeroSubtitle>Encontre as melhores vagas aqui</HeroSubtitle>
+    </HeroContent>
+  </HeroSection>
 );
 
-const Form = styled.form`
-  /* Adicione seus estilos aqui */
-  background-color: #f8f9fa; /* exemplo de cor de fundo */
-  padding: 20px;
-`;
-
-const Container = styled.div`
-  /* Adicione seus estilos aqui */
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-`;
-
-const HeroTitle = styled.h2`
-  /* Adicione seus estilos aqui */
-  font-size: 2rem;
-  text-align: center;
-  color: #333; /* exemplo de cor de texto */
-  font-family: 'Gloock', serif; /* usando a fonte importada no index.html */
-`;
-
 export default Hero;
-

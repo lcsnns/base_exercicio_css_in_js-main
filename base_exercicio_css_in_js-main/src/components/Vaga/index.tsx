@@ -1,3 +1,5 @@
+// src/components/Vaga.tsx
+import React from 'react';
 import styled from 'styled-components';
 
 type Props = {
@@ -13,15 +15,13 @@ type Props = {
 const Vaga = (props: Props) => (
   <VagaItem>
     <VagaTitulo>{props.titulo}</VagaTitulo>
-    <ul>
-      <li>Localizacao: {props.localizacao}</li>
+    <VagaDetalhes>
+      <li>Localização: {props.localizacao}</li>
       <li>Senioridade: {props.nivel}</li>
-      <li>Tipo de contratacao: {props.modalidade}</li>
-      <li>
-        Salário: {props.salarioMin} - {props.salarioMax}
-      </li>
+      <li>Tipo de Contratação: {props.modalidade}</li>
+      <li>Salário: {props.salarioMin.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} - {props.salarioMax.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</li>
       <li>Requisitos: {props.requisitos.join(', ')}</li>
-    </ul>
+    </VagaDetalhes>
     <VagaLink href="#">Ver detalhes e candidatar-se</VagaLink>
   </VagaItem>
 );
@@ -33,18 +33,33 @@ const VagaItem = styled.li`
   padding: 16px;
   margin-bottom: 16px;
   list-style-type: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background-color: #f9f9f9;
+  }
 `;
 
 const VagaTitulo = styled.h3`
   font-size: 1.5rem;
   margin-bottom: 8px;
-  color: #333;
+  color: var(--cor-principal);
+  font-family: 'Gloock', serif;
+`;
+
+const VagaDetalhes = styled.ul`
   font-family: 'Lato', sans-serif;
+  color: #666;
+  margin-bottom: 12px;
+  padding-left: 0;
+
+  li {
+    margin-bottom: 8px;
+  }
 `;
 
 const VagaLink = styled.a`
   display: inline-block;
-  margin-top: 12px;
   padding: 8px 16px;
   background-color: var(--cor-secundaria);
   color: var(--cor-principal);
@@ -59,4 +74,3 @@ const VagaLink = styled.a`
 `;
 
 export default Vaga;
-

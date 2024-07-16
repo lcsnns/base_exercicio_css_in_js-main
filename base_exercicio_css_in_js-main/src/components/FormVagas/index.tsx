@@ -1,4 +1,5 @@
-import { FormEvent, useState } from 'react';
+// src/components/FormVagas.tsx
+import React, { FormEvent, useState } from 'react';
 import styled from 'styled-components';
 
 type Props = {
@@ -10,7 +11,7 @@ const FormVagas = ({ aoPesquisar }: Props) => {
 
   const aoEnviarForm = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    aoPesquisar(termo.toLocaleLowerCase());
+    aoPesquisar(termo.toLowerCase());
   };
 
   return (
@@ -57,5 +58,3 @@ const Button = styled.button`
 `;
 
 export default FormVagas;
-
-
