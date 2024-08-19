@@ -11,10 +11,14 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.0",
-    "styled-components": "^6.0.0"
+    "styled-components": "^6.0.0",
+    "typescript": "^4.9.5",
+    "web-vitals": "^x.x.x"
   },
   "devDependencies": {
-    "typescript": "^5.0.4"
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "eslint-plugin-prettier": "^x.x.x"
   },
   "eslintConfig": {
     "extends": [

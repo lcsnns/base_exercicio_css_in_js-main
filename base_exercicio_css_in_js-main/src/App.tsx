@@ -1,11 +1,10 @@
 // src/App.tsx
 import React from 'react';
 import GlobalStyle from './GlobalStyle';
-import Header from './components/Cabecalho';
-import Hero from './components/Hero';
-import ListaVagas from './containers/ListaVagas';
-import FormVagas from './components/FormVagas';
-import Vaga from './components/Vaga'; // Adicione a importação
+import Header from './components/Cabecalho/Cabecalho';
+import Hero from './components/Hero/Hero';
+import ListaVagas from './components/Vaga/Vaga';
+import FormVagas from './components/FormVagas/FormVagas';
 
 function App() {
   return (
@@ -13,19 +12,9 @@ function App() {
       <GlobalStyle />
       <Header />
       <Hero />
-      <div className="container">
+      <div className="container" id="jobs">
         <FormVagas aoPesquisar={(termo) => console.log(termo)} />
         <ListaVagas />
-        {/* Adicione um exemplo de Vaga */}
-        <Vaga
-          titulo="Desenvolvedor Front-end"
-          localizacao="São Paulo, SP"
-          nivel="Pleno"
-          modalidade="Presencial"
-          salarioMin={5000}
-          salarioMax={8000}
-          requisitos={['React', 'JavaScript', 'CSS']}
-        />
       </div>
     </>
   );
